@@ -22,7 +22,7 @@ class Mockingbird < Formula
     # which the next brew upgrade deletes.
     (bin/"mockingbird").write <<~SH
       #!/bin/sh
-      MOCKINGBIRD_ROOT="#{opt_libexec}" exec "#{Formula["bun"].opt_bin}/bun" "#{opt_libexec}/apps/daemon/src/cli.ts" "$@"
+      MOCKINGBIRD_ROOT="#{opt_libexec}" exec "#{formula_opt_bin("bun")}/bun" "#{opt_libexec}/apps/daemon/src/cli.ts" "$@"
     SH
   end
 
