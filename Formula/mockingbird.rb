@@ -24,7 +24,7 @@ class Mockingbird < Formula
     if (libexec/"apps/cli").exist?
       cd libexec/"apps/cli" do
         system "go", "build", *std_go_args(ldflags: "-s -w -X main.release=v#{version}",
-                                           output: libexec/"apps/cli/mockingbird")
+                                           output:  libexec/"apps/cli/mockingbird")
       end
       command = "\"#{opt_libexec}/apps/cli/mockingbird\""
     end
