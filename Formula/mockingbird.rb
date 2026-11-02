@@ -1,8 +1,8 @@
 class Mockingbird < Formula
   desc "Local voice dictation for macOS: hold Fn, speak, and get clean text"
   homepage "https://github.com/NirjharBhattacharjee/mockingbird"
-  url "https://github.com/NirjharBhattacharjee/mockingbird/releases/download/v0.3.1/mockingbird-0.3.1.tar.gz"
-  sha256 "6b3914833317e8b4f34d07e5a2123a059c44c808fbc4e6f4ac8b910bb98d6981"
+  url "https://github.com/NirjharBhattacharjee/mockingbird/releases/download/v0.3.2/mockingbird-0.3.2.tar.gz"
+  sha256 "8559859cc02291e28add790b4f29899b82feb4b23dbe35889256cdcb8d2c4789"
   license "MIT"
 
   depends_on "go" => :build
