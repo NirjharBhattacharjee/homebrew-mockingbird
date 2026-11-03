@@ -1,8 +1,8 @@
 class Mockingbird < Formula
-  desc "Local voice dictation for macOS: hold Fn, speak, and get clean text"
+  desc "Local video editing engine for AI agents: transcribe, cut, caption and render"
   homepage "https://github.com/NirjharBhattacharjee/mockingbird"
-  url "https://github.com/NirjharBhattacharjee/mockingbird/releases/download/v0.3.2/mockingbird-0.3.2.tar.gz"
-  sha256 "8559859cc02291e28add790b4f29899b82feb4b23dbe35889256cdcb8d2c4789"
+  url "https://github.com/NirjharBhattacharjee/mockingbird/releases/download/v0.4.0/mockingbird-0.4.0.tar.gz"
+  sha256 "417c5956221012e8bb10e44575e81a006a4116110a26e9bd64dc383411688b01"
   license "MIT"
 
   depends_on "go" => :build
@@ -10,7 +10,6 @@ class Mockingbird < Formula
   depends_on "bun"
   depends_on "ffmpeg"
   depends_on :macos
-  depends_on "ollama"
   depends_on "whisper.cpp"
 
   def install
@@ -29,8 +28,8 @@ class Mockingbird < Formula
       command = "\"#{opt_libexec}/apps/cli/mockingbird\""
     end
     # MOCKINGBIRD_ROOT is the unversioned opt path: Bun resolves symlinks, so
-    # without it the launch agent would name this version's Cellar folder,
-    # which the next brew upgrade deletes. The Go command finds bun on the PATH.
+    # without it paths it saves would name this version's Cellar folder, which
+    # the next brew upgrade deletes. The Go command finds bun on the PATH.
     (bin/"mockingbird").write <<~SH
       #!/bin/sh
       export MOCKINGBIRD_ROOT="#{opt_libexec}"
@@ -41,12 +40,13 @@ class Mockingbird < Formula
 
   def caveats
     <<~EOS
-      Download the speech and cleanup models (a few GB, once):
+      Download the speech models (about 1 GB, once):
         mockingbird models pull
-      Then run it in the background, now and at every login:
-        mockingbird start
+      Then give it to your AI agent. For Claude Code:
+        claude mcp add mockingbird -- mockingbird mcp
 
-      After a brew upgrade, run `mockingbird restart` to use the new version.
+      Dictation is gone since 0.4.0. If you used it, log out and back in once:
+      its background agent removes itself and gives the Fn key back.
     EOS
   end
 
