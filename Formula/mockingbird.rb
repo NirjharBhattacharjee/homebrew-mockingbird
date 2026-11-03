@@ -1,8 +1,8 @@
 class Mockingbird < Formula
   desc "Local video editing engine for AI agents: transcribe, cut, caption and render"
   homepage "https://github.com/NirjharBhattacharjee/mockingbird"
-  url "https://github.com/NirjharBhattacharjee/mockingbird/releases/download/v0.4.0/mockingbird-0.4.0.tar.gz"
-  sha256 "417c5956221012e8bb10e44575e81a006a4116110a26e9bd64dc383411688b01"
+  url "https://github.com/NirjharBhattacharjee/mockingbird/releases/download/v0.4.1/mockingbird-0.4.1.tar.gz"
+  sha256 "e4c6f0b42536e705585b9aee07c785cc350d0026bea05e439a6035dbc27093ba"
   license "MIT"
 
   depends_on "go" => :build
