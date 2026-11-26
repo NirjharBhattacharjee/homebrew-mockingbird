@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.svg" alt="homebrew-mockingbird: the Homebrew tap for mockingbird" width="760">
+</p>
+
 # homebrew-mockingbird
 
 Homebrew tap for [mockingbird](https://github.com/NirjharBhattacharjee/mockingbird),
